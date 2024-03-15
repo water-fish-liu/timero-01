@@ -9,13 +9,14 @@ namespace CountdownTimerApp
     {
         private int secondsRemaining;
         private SoundPlayer soundPlayer;
-
+        private SoundPlayer soundPlayer1;
 
         public MainForm()
         {
             InitializeComponent();
             InitializeTimer();
             InitializeSoundPlayer();
+            InitializeSoundPlayer1();
         }
 
         private void InitializeTimer()
@@ -28,7 +29,11 @@ namespace CountdownTimerApp
             // 初始化 
             soundPlayer = new SoundPlayer(".\\file.wav");
         }
-
+        private void InitializeSoundPlayer1()
+        {
+            // 初始化 
+            soundPlayer1 = new SoundPlayer(".\\1.wav");
+        }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
@@ -36,6 +41,7 @@ namespace CountdownTimerApp
             {
                 secondsRemaining--;
                 UpdateDisplay();
+                PlayAudio1();
             }
             else
             {
@@ -53,6 +59,11 @@ namespace CountdownTimerApp
         {
             // 播
             soundPlayer.Play();
+        }
+        private void PlayAudio1()
+        {
+            // 播
+            soundPlayer1.Play();
         }
         private void DisPlayAudio()
         {
