@@ -111,10 +111,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="1.wav">
+    <Content Include="1.wav" />
+    <Content Include="file.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="file.wav">
+    <Content Include="sound.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

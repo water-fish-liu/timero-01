@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Media;
 using System.Windows.Forms;
+using System.Threading;
 
 
 namespace CountdownTimerApp
@@ -32,7 +33,7 @@ namespace CountdownTimerApp
         private void InitializeSoundPlayer1()
         {
             // 初始化 
-            soundPlayer1 = new SoundPlayer(".\\1.wav");
+            soundPlayer1 = new SoundPlayer(".\\sound.wav");
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
@@ -64,13 +65,19 @@ namespace CountdownTimerApp
         {
             // 播
             soundPlayer1.Play();
+            Thread.Sleep(800);
+            DisPlayAudio1();
         }
         private void DisPlayAudio()
         {
             //停
             soundPlayer.Stop();
         }
-
+        private void DisPlayAudio1()
+        {
+            //停
+            soundPlayer1.Stop();
+        }
         private void UpdateDisplay()
         {
             label1.Text = $"还剩{secondsRemaining}秒";
